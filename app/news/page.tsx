@@ -23,7 +23,7 @@ type PostData = {
 };
 
 // 記事一覧データを取得する関数
-export async function getNewsData(page: number = 1) {
+async function getNewsData(page: number = 1) {
   const fileNames = fs.readdirSync(postsDirectory);
   const allPostsData: PostData[] = fileNames
     .map((fileName) => {
