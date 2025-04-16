@@ -53,13 +53,7 @@ async function getNewsData(page: number = 1) {
   };
 }
 
-type NewsProps = {
-  params: {
-    page?: string;
-  };
-};
-
-const News = async ({ params }: NewsProps) => {
+const News = async ({ params }: { params: { page?: string } }) => {
   const currentPage = params.page ? parseInt(params.page) : 1;
   const { posts, pages } = await getNewsData(currentPage);
 
